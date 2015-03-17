@@ -29,6 +29,13 @@ class LessonsController < ApplicationController
     render :edit
   end
 
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update_attributes(lesson_params)
+    flash[:notice] = "Lesson successfully updated."
+    redirect_to lessons_path
+  end
+
   private
 
 
