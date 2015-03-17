@@ -7,6 +7,7 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @lessons = Lesson.all
     render :new
   end
 
@@ -26,6 +27,7 @@ class LessonsController < ApplicationController
 
   def edit
     @lesson = Lesson.find(params[:id])
+    @lessons = Lesson.all
     render :edit
   end
 
