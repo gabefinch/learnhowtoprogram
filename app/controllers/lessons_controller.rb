@@ -19,6 +19,16 @@ class LessonsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+    render :edit
+  end
+
   private
 
 
