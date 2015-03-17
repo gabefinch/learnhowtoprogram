@@ -36,6 +36,13 @@ class LessonsController < ApplicationController
     redirect_to lessons_path
   end
 
+  def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    flash[:notice] = "Lesson successfully deleted."
+    redirect_to lessons_path
+  end
+
   private
 
 

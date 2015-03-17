@@ -7,6 +7,11 @@
     <li>
       <%= link_to lesson.name, lesson_path(lesson) %>
       <small><%= link_to "Edit", edit_lesson_path(lesson) %></small>
+      <small>
+        <%= link_to "Delete", lesson_path(lesson),
+                                    :data => {:confirm => "Seguro?",
+                                    :method => "delete"} %>
+      </small>
     </li>
   <% end %>
 
