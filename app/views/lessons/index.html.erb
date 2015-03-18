@@ -1,14 +1,14 @@
-<p><%= link_to "Add a new lesson", new_lesson_path %></p>
+<p><%= link_to "Add a new lesson", new_section_lesson_path %></p>
 
 <h1>Lessons</h1>
 
 <ul>
   <% @lessons.each do |lesson| %>
     <li>
-      <%= link_to lesson.name, lesson_path(lesson) %>
-      <small><%= link_to "Edit", edit_lesson_path(lesson) %></small>
+      <%= link_to lesson.name, section_lesson_path(lesson) %>
+      <small><%= link_to "Edit", edit_section_lesson_path(lesson) %></small>
       <small>
-        <%= link_to "Delete", lesson_path(lesson),
+        <%= link_to "Delete", section_lesson_path(lesson),
                                     :data => {:confirm => "Seguro?",
                                     :method => "delete"} %>
       </small>
@@ -16,5 +16,3 @@
   <% end %>
 
 </ul>
-
- 

@@ -1,0 +1,30 @@
+<p><%= link_to "Add a new section", new_section_path %></p>
+
+<h1>Sections</h1>
+
+<ul>
+  <% @sections.each do |section| %>
+    <li>
+      <details closed>
+        <summary class="well">
+          <%= link_to section.name, section_path(section) %>
+        </summary>
+          <small><%= link_to "Edit", edit_section_path(section) %></small>
+          <small>
+            <%= link_to "Delete", section_path(section),
+                                        :data => {:confirm => "Seguro?",
+                                        :method => "delete"} %>
+          </small>
+        <ul>
+          <% section.lessons.each do |lesson| %>
+          <li><%= lesson.name %></li>
+          <% end %>
+        </ul>
+      </details>
+
+
+
+    </li>
+  <% end %>
+
+</ul>

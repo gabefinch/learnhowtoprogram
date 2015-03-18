@@ -6,8 +6,11 @@
 
 <h5><%= link_to 'Home', root_path %></h5>
 
-id<%= @lesson.id %>
-number<%= @lesson.number %>
-<% if @lesson.next %>
-<h5><%= link_to "Next Lesson", lesson_path(@lesson.next) %></h5>
+
+<% if @lesson.number && @lesson.next %>
+<h5><%= link_to "Next Lesson", section_lesson_path(@lesson.next) %></h5>
+<% end %>
+
+<% if @lesson.number && @lesson.prev %>
+<h5><%= link_to "Previous Lesson", section_lesson_path(@lesson.prev) %></h5>
 <% end %>
